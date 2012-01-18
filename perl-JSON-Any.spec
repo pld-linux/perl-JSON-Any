@@ -8,13 +8,13 @@
 Summary:	JSON::Any - Wrapper Class for the various JSON classes.
 #Summary(pl.UTF-8):	
 Name:		perl-JSON-Any
-Version:	1.22
+Version:	1.29
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/JSON/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	c576a6765c310ad36135e2c090eb0be7
+# Source0-md5:	f7eea523d532668555456e4153334342
 URL:		http://search.cpan.org/dist/JSON-Any/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
