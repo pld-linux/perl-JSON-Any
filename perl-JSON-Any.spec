@@ -7,19 +7,23 @@
 Summary:	JSON::Any - Wrapper Class for the various JSON classes.
 #Summary(pl.UTF-8):	
 Name:		perl-JSON-Any
-Version:	1.29
-Release:	2
+Version:	1.42
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/JSON/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	f7eea523d532668555456e4153334342
+Source0:	https://www.cpan.org/authors/id/E/ET/ETHER/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	95a1f70ef483ae50c7cbc57d19cc5cf5
 URL:		http://search.cpan.org/dist/JSON-Any/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-JSON >= 2.02
 BuildRequires:	perl-JSON-XS
+BuildRequires:	perl-Test-Fatal
+BuildRequires:	perl-Test-Needs
+BuildRequires:	perl-Test-Warnings >= 0.009
+BuildRequires:	perl-Test-Without-Module
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -35,7 +39,7 @@ JSON modules currently on CPAN.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} -MExtUtils::MakeMaker -we 'WriteMakefile(NAME=>"%{pdir}::%{pnam}")' \
+%{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make}
 
